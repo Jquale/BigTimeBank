@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2016
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankAccountApp", "BankAccountApp\BankAccountApp.csproj", "{F28494A0-8930-488B-BA0D-D92C4BE54DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT.Model", "BT.Model\BT.Model.csproj", "{6A35921E-6EF7-413E-8CA5-805BDA6BC079}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BT.Model", "BT.Model\BT.Model.csproj", "{6A35921E-6EF7-413E-8CA5-805BDA6BC079}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.BTModel", "Testing.BTModel\Testing.BTModel.csproj", "{D938454F-FE70-4337-9A47-E20717740FFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{A844522C-526B-42BC-ABAB-30039ABBA1F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D938454F-FE70-4337-9A47-E20717740FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D938454F-FE70-4337-9A47-E20717740FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D938454F-FE70-4337-9A47-E20717740FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A844522C-526B-42BC-ABAB-30039ABBA1F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A844522C-526B-42BC-ABAB-30039ABBA1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A844522C-526B-42BC-ABAB-30039ABBA1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A844522C-526B-42BC-ABAB-30039ABBA1F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
