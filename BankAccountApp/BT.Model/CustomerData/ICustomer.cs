@@ -3,16 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BT.Model.CustomerData
-{
+namespace BT.Model.CustomerData{
 	public interface ICustomerRecord
 	{
+		string CompanyName { get; set; }
+		string LastName { get; set; }	
 
 	}
-	internal interface ICustomer
+	public interface ICustomer:ICustomerRecord
 	{
-		string FirstName { get; set; }
-		string LastName { get; set; }	
+
 		Address Address { get; set; }	
+		string FirstName { get; set; }
+
+		bool Delete();
+		bool Save();
 	}
 }

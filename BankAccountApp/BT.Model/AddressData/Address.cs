@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BT.Model.AddressData
 {
-	internal class Address : IAddress
+	public class Address : IAddress
 	{
 		private AddressDto _record;
 

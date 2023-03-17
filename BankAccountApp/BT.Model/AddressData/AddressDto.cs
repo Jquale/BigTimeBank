@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BT.Model.AddressData
 {
-	internal class AddressDto : IAddressRecord
+	public class AddressDto : IAddressRecord
 	{
 		public string Street { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 		public string City { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

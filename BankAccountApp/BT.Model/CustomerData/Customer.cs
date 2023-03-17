@@ -36,6 +36,7 @@ namespace BT.Model.CustomerData
 			set { _customer.Address = value; }
 		}
 
+		public string CompanyName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
 		public bool Delete()
 		{
