@@ -4,10 +4,8 @@ using System.Text;
 
 namespace BT.Model.CustomerData
 {
-	internal interface ICustomerDataRepository
+	public interface ICustomerDataRepository : IBaseRepository<Customer>
 	{
-		IEnumerable<Customer> GetCustomers(int id);
 		void InsertCustomer(Customer customer);
-		void DeleteCustomer(int id);	
 	}
 }

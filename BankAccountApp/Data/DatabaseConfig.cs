@@ -2,7 +2,7 @@
 {
 	public class DatabaseConfig
 	{
-		public string Name { get; set; }
+		public string Name { get; set; } = "bt.db";
 	}
 }
 

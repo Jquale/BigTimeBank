@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Util\" />
+    <Compile Remove="IDatabase.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Database.csproj" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.4" />
   </ItemGroup>
 
 </Project>

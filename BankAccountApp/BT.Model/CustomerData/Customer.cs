@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BT.Model.CustomerData
 {
-	internal class Customer : ICustomer
+	public class Customer : ICustomer
 	{
 		private CustomerDto _customer;
 
@@ -36,7 +36,12 @@ namespace BT.Model.CustomerData
 			set { _customer.Address = value; }
 		}
 
-		public string CompanyName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public string CompanyName 
+		{
+			get { return _customer.CompanyName; }
+			set { _customer.CompanyName = value; }
+
+		}
 
 		public bool Delete()
 		{

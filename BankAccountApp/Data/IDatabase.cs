@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BankAccountApp.Database
 {
-	public interface IDatabaseBootstrap
+	public interface IDatabase
 	{
-		void Setup();
+		static void Setup();
 	}
 }

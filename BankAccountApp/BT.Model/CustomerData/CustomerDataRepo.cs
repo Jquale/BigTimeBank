@@ -1,18 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Text;
+using BankAccountApp.Database;
 
 namespace BT.Model.CustomerData
 {
 	public class CustomerDataRepo : ICustomerDataRepository
 	{
-		//private readonly 
+		public CustomerDataRepo()
+		{
+
+		}
+
+		public IDbConnection Connection => throw new NotImplementedException();
+
+		public bool Delete<entity>(Customer ent)
+		{
+			throw new NotImplementedException();
+		}
+
 		public void DeleteCustomer(int id)
 		{
 			throw new NotImplementedException();
 		}
 
-		IEnumerable<Customer> ICustomerDataRepository.GetCustomers(int id)
+		public IEnumerable<Customer> GetCustomers(int id)
+		{
+			Database.GetCustomers();
+			throw new NotImplementedException();
+		}
+
+		public bool Save<entity>()
 		{
 			throw new NotImplementedException();
 		}

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BT.Model.CustomerData
 {
-	internal class CustomerDto : ICustomerRecord
+	public class CustomerDto : ICustomerRecord
 	{
 		public string FirstName { get; set; }
 		public string LastName { get; set; }

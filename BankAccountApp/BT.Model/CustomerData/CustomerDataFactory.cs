@@ -4,7 +4,11 @@ using System.Text;
 
 namespace BT.Model.CustomerData
 {
-	internal class CustomerDataFactory
+	public static class CustomerDataFactory
 	{
+		public static ICustomerDataRepository Create()
+		{
+			return new CustomerDataRepo();
+		}
 	}
 }
