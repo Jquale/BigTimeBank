@@ -6,7 +6,7 @@
             method: 'GET',
             url: '/Home/GetAll'
     }).then(function successCallback(response) {
-        console.log(JSON.stringify(response);
+        console.log(JSON.stringify(response));
     }, function errorCallback(response) {
 
        alert();

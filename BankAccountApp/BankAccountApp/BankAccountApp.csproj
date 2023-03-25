@@ -483,6 +483,7 @@
     <Content Include="Content\CSS\core\icons.css" />
     <Content Include="Content\CSS\core\main-nav.css" />
     <Content Include="Content\CSS\core\tables.css" />
+    <Content Include="Content\Js\BTApp\MenubarController.js" />
     <Content Include="Content\Js\BTApp\CustomerController.js" />
     <Content Include="Content\Js\BTApp\TestController.js" />
     <Content Include="Content\Js\BTApp\WelcomeController.js" />
@@ -524,8 +525,9 @@
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Views\Home\Page.AddCuctomer.cshtml" />
-    <None Include="Views\Home\Page.CustomerList.cshtml" />
+    <Content Include="Views\Customer\Page.AddCuctomer.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <None Include="Views\Customer\Page.CustomerList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -572,6 +574,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Page.Welcome.cshtml" />
     <Content Include="Views\Home\Page.Test.cshtml" />
+    <Content Include="Views\Shared\Page.menubar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -582,7 +585,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\CSS\BTApp\" />
-    <Folder Include="Views\Event\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BT.Model\BT.Model.csproj">

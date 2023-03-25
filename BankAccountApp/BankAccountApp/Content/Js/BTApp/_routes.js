@@ -7,5 +7,8 @@ BT.App.config(['$routeProvider', function ($route) {
 		.when('/test', {
 			templateUrl: '/home/page/Test'
 		})
-		.otherwise({ redirectTo: '/welcome' });
+		.when('/Customer', {
+			templateUrl: '/Customer/'
+		})
+		.otherwise({ redirectTo: '/Welcome' });
 }]);

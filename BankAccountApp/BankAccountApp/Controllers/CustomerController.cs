@@ -7,6 +7,10 @@ namespace BankAccountApp.Controllers
 {
 	public class CustomerController : Controller
 	{
+		public ActionResult Index()
+		{
+			return View();
+		}
 		public ActionResult GetAll()
 		{
 			var custList = AccountDataFactory.GetCustomer(-1).ToList();

@@ -1,17 +1,17 @@
-﻿'use strict'
+﻿// CustomerController.js
 
-    src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9 angular.min.js"
-app.service('CustomerService', function () { 
-
-    var url = 'Home/GetAll';
-    this.GetAll = function (apiRoute) {
-        url = apiRoute;
-        return $http.get(url);
-    }
+app.service('CustomerService', function () {
+alert("hit service!");
+    //var url = '/GetAll';
+    //this.GetAll = function (apiRoute) {
+    //    url = apiRoute;
+    //    return $http.get(url);
+    //}
 
 })
-BT.App.controller('CustomerController', ['$scope', 'CustomerService' function ($scope) {
-    var baseUrl = 'Home';
+
+BT.App.controller('CustomerController', ['$scope', 'CustomerService', function ($scope) {
+    var baseUrl = 'Customer'
     $scope.GetCustomers = function () {
         var apiRouter = baseUrl + 'GetCUstomers';
         var _customer = CustomerService.GetAll(apiRoute);
@@ -21,4 +21,5 @@ BT.App.controller('CustomerController', ['$scope', 'CustomerService' function ($
     }
     $scope.GetCustomers();
 }]);
+
 
