@@ -16,7 +16,14 @@ namespace BankAccountApp.Controllers
 
 		public ActionResult Page(String id, string subView = "")
 		{
-			return PartialView($"Page.{id}");
+			return PartialView($"Page.CustomerList");
 		}
+		
+		public ActionResult NewAccount()
+		{
+			return PartialView($"Page.AddCustomer");
+		}
+
+		public ActionResult GetAll() { return View(); }
 	}
 }

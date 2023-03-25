@@ -28,7 +28,7 @@ namespace BT.Model
 			}
 		}
 
-		public virtual bool Save<entity>()
+		public virtual bool Save<entity>(T ent)
 		{
 			throw new NotImplementedException();
 		}

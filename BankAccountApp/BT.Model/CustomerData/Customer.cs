@@ -9,19 +9,15 @@ namespace BT.Model.CustomerData
 	{
 		private CustomerDto _customer;
 
-		public Customer(CustomerDto customer = null)
+		public Customer()
 		{
-			if (customer == null) { customer = new CustomerDto(); }
 
-			_customer = customer;
 		}
 
 		public string FirstName
 		{
 			get { return _customer.FirstName; }
 			set { _customer.FirstName = value; }
-
-
 		}
 
 		public string LastName
@@ -40,18 +36,8 @@ namespace BT.Model.CustomerData
 		{
 			get { return _customer.CompanyName; }
 			set { _customer.CompanyName = value; }
-
 		}
 
-		public bool Delete()
-		{
-			throw new NotImplementedException();
-		}
-
-		public bool Save()
-		{
-			throw new NotImplementedException();
-		}
 	}										
 
 }

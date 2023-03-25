@@ -7,16 +7,12 @@ namespace BT.Model.CustomerData{
 	public interface ICustomerRecord
 	{
 		string CompanyName { get; set; }
+		string FirstName { get; set; }
 		string LastName { get; set; }	
 
 	}
 	public interface ICustomer:ICustomerRecord
 	{
-
 		Address Address { get; set; }	
-		string FirstName { get; set; }
-
-		bool Delete();
-		bool Save();
 	}
 }

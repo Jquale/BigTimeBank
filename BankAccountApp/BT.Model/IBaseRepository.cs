@@ -9,7 +9,7 @@ namespace BT.Model
 	public interface IBaseRepository<T> where T : class
 	{
 		bool Delete<entity>(T ent);
-		bool Save<entity>();
+		bool Save<entity>(T ent);
 		
 		IDbConnection Connection { get; }
 	}
