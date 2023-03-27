@@ -1,5 +1,4 @@
 BT.App.config(['$routeProvider', function ($route) {
-
 	$route
 		.when('/welcome', {
 			templateUrl: '/home/page/Welcome'

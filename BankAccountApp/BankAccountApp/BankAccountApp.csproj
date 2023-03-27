@@ -458,6 +458,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\BigtimeFullLogo.jpg" />
+    <Content Include="Content\bTime.jpg" />
     <Content Include="Content\CSS\core\bootstrap-datepicker.css" />
     <Content Include="Content\CSS\core\bootstrap.css" />
     <Content Include="Content\CSS\core\bt-core-autocomplete.css" />
@@ -574,7 +576,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Page.Welcome.cshtml" />
     <Content Include="Views\Home\Page.Test.cshtml" />
-    <Content Include="Views\Shared\Page.menubar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,13 +1,12 @@
 ﻿// MenuebarController.js
 BT.App.controller('MenubarController', function ($scope) {
         var baseUrl = 'Menubar';
-}
 });
 
 function menu($scope) {
     $scope.menuHTML = "<div><input type=button value='BUTTON'> /</div>"
     $("#main-menubar").html($sq.menuHTML);
-    angular.bootstrap($('#main-menubar'), ['mainApp']);
+    angular.bootstrap($('#main-menubar'), ['MainApp']);
 }
 //BT.App.controller('CustomerController', ['$scope', 'CustomerService', function ($scope) {
 //    var baseUrl = 'Customer'

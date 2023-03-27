@@ -25,5 +25,12 @@ namespace BankAccountApp.Controllers
 		}
 
 		public ActionResult GetAll() { return View(); }
+
+		//public ActionResult Menu(String id)
+		//{
+
+		//	return PartialView("..\\Shared\\_Menubar");
+
+		//}
 	}
 }
