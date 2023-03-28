@@ -5,3 +5,24 @@
 }
 @section additionalScripts {
 }
+
+
+
+<body ng-controller="CustomerController" class="main-app fixed-top" style="background-image: url('../../Content/BigtimeFullLogo.jpg')"  >
+    <div class="fixed-top-body" ng-view="">
+
+        <div ng-app="MainApp" ng-controller="Customer">
+
+            <table>
+                <tr>
+                    <th>LastName</th>
+                    <th>Company Name</th>
+                </tr>
+                <tr ng-repeat="customer in customers">
+                    <td>{{ customer.LastName }}</td>
+                    <td>{{ customer.CompanyName }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>

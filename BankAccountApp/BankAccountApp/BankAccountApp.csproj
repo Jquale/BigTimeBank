@@ -460,6 +460,7 @@
   <ItemGroup>
     <Content Include="Content\BigtimeFullLogo.jpg" />
     <Content Include="Content\bTime.jpg" />
+    <Content Include="Content\CSS\BTApp\site.css" />
     <Content Include="Content\CSS\core\bootstrap-datepicker.css" />
     <Content Include="Content\CSS\core\bootstrap.css" />
     <Content Include="Content\CSS\core\bt-core-autocomplete.css" />
@@ -485,8 +486,8 @@
     <Content Include="Content\CSS\core\icons.css" />
     <Content Include="Content\CSS\core\main-nav.css" />
     <Content Include="Content\CSS\core\tables.css" />
-    <Content Include="Content\Js\BTApp\MenubarController.js" />
     <Content Include="Content\Js\BTApp\CustomerController.js" />
+    <Content Include="Content\Js\BTApp\HomeController.js" />
     <Content Include="Content\Js\BTApp\TestController.js" />
     <Content Include="Content\Js\BTApp\WelcomeController.js" />
     <Content Include="Content\Js\BTApp\_app.js" />
@@ -585,7 +586,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\CSS\BTApp\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BT.Model\BT.Model.csproj">

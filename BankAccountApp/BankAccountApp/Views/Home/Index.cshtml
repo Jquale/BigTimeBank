@@ -3,15 +3,22 @@
 	//   ViewBag.Title = "Index";
 	//   Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-@section additionalCss {
-
-}
 @section additionalScripts {
 	<script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/WelcomeController.js")"></script>
 	<script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/TestController.js")"></script>
 	<script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/CustomerController.js")"></script>
+	<script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/HomeController.js")"></script>
 }
-
-<div ng-app="MainApp" class="main-app fixed-top">
-	<div class="fixed-top-body" ng-view=""></div>
-</div>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body ng-controller="Home" class="main-app fixed-top" style="background-image: url('../../Content/BigtimeFullLogo.jpg')">
+        <nav class="active" ng-click="$event.preventDefault()">
+            <a href="#" class="home" ng-click="" >HOME</a>
+            <a href="#" class="customer" ng-click="">CUSTOMER</a>
+            <a href="#" class="company" ng-click="">COMPANY</a>
+            <a href="#" class="address" ng-click="">ADDRESS</a>
+        </nav>
+</body>
+</html>

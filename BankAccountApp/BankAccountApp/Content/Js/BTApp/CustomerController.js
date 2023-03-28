@@ -1,30 +1,8 @@
-﻿//// CustomerController.js
+﻿if (typeof BT === 'undefined') { BT = {}; }
 
-//BT.App.service('CustomerService', function () {
-//alert("hit service!");
-//    //var url = '/GetAll';
-//    //this.GetAll = function (apiRoute) {
-//    //    url = apiRoute;
-//    //    return $http.get(url);
-//    //}
+BT.App.controller('CustomerController', function ($scope) {
 
-//})
+    alert("customer controller");
+   
 
-//BT.App.controller('CustomerController', ['$scope', 'CustomerService', function ($scope, $http) {
-//    $http.get("http://Customer/GetAll")
-//        .then(function (response) {
-//            alert(JSON.stringify(response));
-//        })
-       
-//    //var baseUrl = 'Customer'
-//    //$scope.GetCustomers = function () {
-//    //    var apiRouter = baseUrl + 'GetCUstomers';
-//    //    var _customer = CustomerService.GetAll(apiRoute);
-//    //    _customer.then(function (response) {
-//    //        $scope.customer = response.data;
-//    //    })
-//    //}
-//    //$scope.GetCustomers();
-//}]);
-
-
+});

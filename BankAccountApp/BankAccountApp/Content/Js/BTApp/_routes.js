@@ -1,3 +1,4 @@
+if (typeof BT === 'undefined') { BT = {}; }
 BT.App.config(['$routeProvider', function ($route) {
 	$route
 		.when('/welcome', {
