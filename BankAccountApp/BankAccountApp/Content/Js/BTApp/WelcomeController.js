@@ -1,8 +1,3 @@
-﻿if (typeof BT === 'undefined') { BT = {}; }
-console.log("hit WelcomeController");
-
-
-BT.App.controller('WelcomeController', function ($scope) {
-
-uiu
+﻿BT.App.controller('WelcomeController', function ($scope) {
+    console.log("Hit WelcomeController");
 });

@@ -16,17 +16,15 @@
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/controls.css")" />
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/bootstrap-datepicker.css")" />
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/bt-entry.css")" />
-
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/BTApp/site.css")" />
 
     @RenderSection("additionalCss", false)
 
 </head>
-<body class="@ViewData["bodyClass"]">
-    '
+	<body class="@ViewData["bodyClass"]">
     <div class="system-nav unselectable">
         <div class="main-overlay"></div>
-        <div id="main-menubar" class="bt-menubar" style="background-image:  url('../Content/BigtimeFullLogo.jpg');">
+        <div id="main-menubar" class="bt-menubar" style="background-image: url('../Content/BigtimeFullLogo.jpg');">
             MENU BAR
         </div>
     </div>
@@ -35,6 +33,7 @@
                 @RenderBody()
             </div>
         </div>
+
 
 
 

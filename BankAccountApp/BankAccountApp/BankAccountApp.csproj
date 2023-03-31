@@ -520,7 +520,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -528,9 +527,6 @@
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Views\Customer\Page.AddCuctomer.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
-    <None Include="Views\Customer\Page.CustomerList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -577,6 +573,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Page.Welcome.cshtml" />
     <Content Include="Views\Home\Page.Test.cshtml" />
+    <Content Include="Views\Home\Page.Customer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

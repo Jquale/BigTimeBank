@@ -1,8 +1,3 @@
-﻿if (typeof BT === 'undefined') { BT = {}; }
-
-BT.App.controller('CustomerController', function ($scope) {
-
-    alert("customer controller");
-   
-
+﻿BT.App.controller('CustomerController', function ($scope) {
+    console.log("Hit CustomerController");
 });
