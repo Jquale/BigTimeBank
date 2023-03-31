@@ -45,3 +45,10 @@ nav a {
 	text-align: center;
 }
 
+#main-container {
+	min-height: 1px;
+	height: 333px;
+	width: 100%;
+	background-color: black;
+}
+

@@ -1,6 +1,6 @@
 if (typeof BT === 'undefined') { BT = {}; }
 console.log("hit app js");
-BT.App = angular.module('MainApp', ['ngResource', 'ui.bootstrap', 'ngRoute']);
+BT.App = angular.module('MainApp', ['ngResource', 'ui.bootstrap', 'ngRoute' ]);
 //loads all of the bigtime angular COMMON input filters into the app
 BT.Angular.Validators.inject(BT.App);
 //Loads all of the bigtime angular COMMON directives into the app
