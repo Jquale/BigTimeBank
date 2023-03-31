@@ -30,6 +30,7 @@ namespace BankAccountApp.Database
 				}
 
 				conection.Execute("CREATE Table Customer (" +
+					"ID INT IDENTITY" +
 					"LastName VARCHAR(100) NOT NULL)" +
 					"CompanyName VARCHAR(100) NOT NULL)");
 

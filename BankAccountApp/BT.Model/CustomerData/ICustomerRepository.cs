@@ -7,7 +7,11 @@ namespace BT.Model.CustomerData
 {
 	public interface ICustomerRepository// : IBaseRepository<Customer>
 	{
-		//Task<IEnumerable<Customer>> GetAll();
-		
+		Customer Get(int id);
+		List<Customer> GetAll();
+		Customer Add(Customer customer);
+		Customer Update(Customer customer);
+		Customer Delete(int id);
+
 	}
 }

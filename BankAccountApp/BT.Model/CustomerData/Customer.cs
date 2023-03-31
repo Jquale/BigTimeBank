@@ -9,23 +9,16 @@ namespace BT.Model.CustomerData
 	{
 		private CustomerDto _customer;
 
-		public Customer()
-		{
+		public Customer() { }
 
+		public Customer(int id, string fName, string lName, string cName)
+		{
+			_customer.ID = id;
+			_customer.LastName = lName;
+			_customer.FirstName = cName;	
+			_customer.CompanyName = cName;
 		}
 
-		public string FirstName
-		{
-			get { return _customer.FirstName; }
-			set { _customer.FirstName = value; }
-		}
-
-		public string LastName
-		{
-			get { return _customer.LastName; }
-			set { _customer.LastName = value; }
-
-		}
 		public Address Address
 		{
 			get { return _customer.Address; }
@@ -38,6 +31,24 @@ namespace BT.Model.CustomerData
 			set { _customer.CompanyName = value; }
 		}
 
+		public string FirstName
+		{
+			get { return _customer.FirstName; }
+			set { _customer.FirstName = value; }
+		}
+
+		public int ID
+		{
+			get { return _customer.ID; }
+		}
+		public string LastName
+		{
+			get { return _customer.LastName; }
+			set { _customer.LastName = value; }
+
+		}
+
+		int ICustomerRecord.ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 	}										
 
 }

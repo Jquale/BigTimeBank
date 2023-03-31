@@ -8,6 +8,7 @@ namespace BT.Model.CustomerData{
 	{
 		string CompanyName { get; set; }
 		string FirstName { get; set; }
+		int ID { get; set; }
 		string LastName { get; set; }	
 
 	}

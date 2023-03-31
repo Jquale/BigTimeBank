@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BankAccountApp.Database;
@@ -16,14 +17,13 @@ namespace BT.Model.CustomerData
 	{
 		private DataContext _context;
 
-		public IDbConnection Connection => throw new NotImplementedException();
+		private IDbConnection connection;
 
 
-		//public IDbConnection Connection => throw new NotImplemcustedException();
-
-		public CustomerRepository(DataContext context)
+		public CustomerRepository(string connectionString = "Data Source=bt.db")
 		{
-			_context = context;
+			connection = new SqliteConnection(connectionString);
+			
 		}
 
 		//public bool Delete<custity>(Customer cust)
@@ -38,34 +38,25 @@ namespace BT.Model.CustomerData
 		//{
 		//}
 
-		public async Task<IEnumerable<Customer>> GetCustomers(int id)
+		public List<Customer> GetCustomers(int id)
 		{
-
-			using (var conn = _context.CreateConnection())
-			{
-				var query = "SELECT * FROM Customers c ORDER BY c.LastName";
-				return await conn.QueryAsync<Customer>(query);
-			}
+			var query = "SELECT * FROM Customers c ORDER BY c.LastName";
+			return  connection.Query<Customer>(query).ToList();
 
 		}
-		public async Task<Customer> GetCustomerById(int id)
+		public Customer GetCustomerById(int id)
 		{
 
-			using (var conn = _context.CreateConnection())
-			{
-				var query = "SELECT * FROM Customers c WHERE c.Id = id";
-				return await conn.QueryFirstOrDefaultAsync<Customer>(query);
-			}
+			var query = "SELECT * FROM Customers c WHERE c.Id = id";
+			return connection.Query<Customer>(query).FirstOrDefault();
 
 		}
 
-		public async Task<Customer> Save(Customer cust)
+		public Customer SaveCustomer(Customer cust)
 		{
 			var query = $"INSERT INTO Customer (LastName, CompanyName) VALUES({cust.LastName}, {cust.CompanyName}), {cust};";
-			using (var conn = _context.CreateConnection())
-			{
-				return await conn.QueryFirstAsync<Customer>(query);
-			}
+			var thing = connection.Query<Customer>(query).FirstOrDefault();
+			return thing;
 		}
 
 		public bool Delete<entity>(Customer ent)
@@ -74,6 +65,31 @@ namespace BT.Model.CustomerData
 		}
 
 		public bool Save<entity>(Customer ent)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Customer Get(int id)
+		{
+			throw new NotImplementedException();
+		}
+
+		public List<Customer> GetAll()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Customer Add(Customer customer)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Customer Update(Customer customer)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Customer Delete(int id)
 		{
 			throw new NotImplementedException();
 		}
