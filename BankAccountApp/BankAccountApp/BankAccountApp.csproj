@@ -548,8 +548,6 @@
     <Content Include="Content\CSS\core\icons.css" />
     <Content Include="Content\CSS\core\main-nav.css" />
     <Content Include="Content\CSS\core\tables.css" />
-    <Content Include="Content\Js\BTApp\CustomerController.js" />
-    <Content Include="Content\Js\BTApp\HomeController.js" />
     <Content Include="Content\Js\BTApp\TestController.js" />
     <Content Include="Content\Js\BTApp\WelcomeController.js" />
     <Content Include="Content\Js\BTApp\_app.js" />
