@@ -11,6 +11,8 @@ namespace BT.Model.CustomerData
 
 		public Customer() { }
 
+		public Customer(string fName) { _customer.FirstName = fName; }
+
 		public Customer(int id, string fName, string lName, string cName)
 		{
 			_customer.ID = id;
@@ -40,6 +42,7 @@ namespace BT.Model.CustomerData
 		public int ID
 		{
 			get { return _customer.ID; }
+			set { ID = value; }
 		}
 		public string LastName
 		{

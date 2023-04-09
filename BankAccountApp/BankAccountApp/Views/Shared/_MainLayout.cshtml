@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    @*Common CSS Files (BTCore2014)*@
     <link rel="shortcut icon" href="#" />
+    @*Common CSS Files (BTCore2014)*@
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/fonts.css")" />
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/bootstrap.css")" />
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/globals.css")" />
@@ -16,68 +15,73 @@
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/controls.css")" />
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/bootstrap-datepicker.css")" />
     <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/core/bt-entry.css")" />
-    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/BTApp/site.css")" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/CSS/BTApp/site.css")"/>
 
     @RenderSection("additionalCss", false)
 
 </head>
-	<body class="@ViewData["bodyClass"]">
+<body class="@ViewData["bodyClass"]">
     <div class="system-nav unselectable">
         <div class="main-overlay"></div>
-        <div id="main-menubar" class="bt-menubar" style="background-image: url('../Content/BigtimeFullLogo.jpg');">
+        <div id="main-menubar" class="bt-menubar">
             MENU BAR
         </div>
     </div>
-        <div id="main-content">
-            <div id="main-pane">
-                @RenderBody()
-            </div>
+    <div id="main-content">
+        <div id="main-pane">
+            @RenderBody()
         </div>
-
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/purify.min.js")"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-
-        @*JQuery Files*@
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery.rule.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/bootstrap.min.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/bootstrap-datePicker.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/crossfilter.min.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery.event.drag.custom.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery.event.special.destroy.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery-btadds.js")"></script>
-
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-
-        @*CORE js FILES (BTCore2014)*@
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/extension_json.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/extension_date.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/bt-core_utility.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/bt-core_select.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/bt-core_form.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/btSelectBoxDirective.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/CommonDirectives.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/dialogGenericController.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/formValidators.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/parentWindowService.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/services.js")"></script>
+    </div>
 
 
-        <script type="text/javascript">
 
-            $(function () {
-                try {
 
-                } catch (err) { }
 
-            });
-        </script>
 
-        @RenderSection("additionalScripts", false)
 
-    </body>
+    @*<script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/purify.min.js")"></script>*@
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    @*JQuery Files*@
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery.rule.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/bootstrap-datePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/crossfilter.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery.event.drag.custom.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery.event.special.destroy.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/lib/jquery/jquery-btadds.js")"></script>
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+
+    @*CORE js FILES (BTCore2014)*@
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/extension_json.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/extension_date.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/bt-core_utility.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/bt-core_select.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/bt-core_form.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/btSelectBoxDirective.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/CommonDirectives.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/dialogGenericController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/formValidators.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/parentWindowService.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTCore/Common/services.js")"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            try {
+
+            } catch (err) { }
+
+        });
+    </script>
+
+    @RenderSection("additionalScripts", false)
+
+</body>
 </html>

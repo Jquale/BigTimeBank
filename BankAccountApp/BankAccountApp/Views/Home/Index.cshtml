@@ -1,71 +1,18 @@
 ﻿
 @{
-	//   ViewBag.Title = "Index";
-	//   Layout = "~/Views/Shared/_MainLayout.cshtml";
+    //   ViewBag.Title = "Index";
+    //   Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 @section additionalScripts {
     <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/_app.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/_routes.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/WelcomeController.js")"></script>
-	<script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/TestController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/WelcomeController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/TestController.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/HomeController.js")"></script>
 }
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body ng-app="MainApp"  ng-controller="WelcomeController" class="app-main fixed-top" style="background-image: url('../../Content/BigtimeFullLogo.jpg')">
-        @*<div class="container"></div>*@
-        <nav class="active">
-            <a href="#home" class="home" ng-click="tab=1">HOME</a>
-            <a href="#customer" class="customer" ng-click="tab=2">CUSTOMER</a>
-            <a href="#company" class="company" ng-click="tab=3">COMPANY</a>
-            <a href="#address" class="address" ng-click="tab=4">ADDRESS</a>
-        </nav>
 
-    <div id="main-container">
-        <div id="home" ng-show="tab==1">
-            <h3>Home</h3>
-        </div>
-        <div id="customer" ng-show="tab==2">
-            <form ng-submit="submit()" >
-                <h3>Customer</h3>
-                <div class="cust-group">
-                    <label for="firstName"></label>
-                    <input type="text"
-                           id="firstName"
-                           ng-model="fname"
-                           placeholder="First Name" />
-                </div>
+<div ng-app="MainApp" class="main-app fixed-top">
+    <div class="fixed-top-body" ng-view=""></div>
+</div>
 
-                <div class="cust-group">
-                    <label for="lastName"></label>
-                    <input type="text"
-                           id="lastName"
-                           ng-model="lname"
-                           placeholder="Last Name" />
-                </div>
 
-                <div class="cust-group">
-                    <label for="companyName"></label>
-                    <input type="text"
-                           id="companyName"
-                           ng-model="cname"
-                           placeholder="Company Name" />
-                </div>
-                <input type="submit" class="btn-primary" value="Submit"/>
-                <pre>vals = {{vals}}</pre>
-            </form>
-        </div>
-         <div id="company" ng-show="tab==3">
-             <div class=comp-group>
-             <h3>Company</h3>
-             </div>
-         </div>
-       <div id="address" ng-show="tab==4">
-        <div class="address-group">
-                        <h3>Address</h3>
-            </div>
-       </div>
-    </div>
-</body>
-</html>

@@ -1,14 +1,8 @@
-﻿using Dapper;
-using Microsoft.Data.Sqlite;
-using SQLitePCL;
+﻿using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using Dapper;
 
 namespace BankAccountApp.Database
 {
@@ -16,25 +10,53 @@ namespace BankAccountApp.Database
 	{
 		//private readonly DatabaseConfig _config;
 
-		public static void Setup()
+		public static bool OpenConnection()
 		{
-			using (var conection = new SqliteConnection("bt.db"))
+			string connStr = GetConnectionString(); 
+			using (var conn = new  SqlConnection(connStr))
 			{
-				conection.Open();
-				var table = conection.Query<string>("SELECT name FROM sqllite_master WHERE type='table' AND name='Customer'");
-				var tableName = table.FirstOrDefault();
-
-				if (!string.IsNullOrEmpty(tableName) && tableName == "Customer")
+				try
 				{
-					return;
+					conn.Open();
+					return true;
 				}
+				catch(SqlException ex) 
+				{
+					return false;
 
-				conection.Execute("CREATE Table Customer (" +
-					"ID INT IDENTITY" +
-					"LastName VARCHAR(100) NOT NULL)" +
-					"CompanyName VARCHAR(100) NOT NULL)");
+				}
+				conn.ConnectionString = connStr;				
+
+				conn.Open();
+
+
+				//var table = conn.Query<string>("SELECT name FROM sqllite_master WHERE type='table' AND name='Customer'");
+				//var tableName = table.FirstOrDefault();
+
+				//if (!string.IsNullOrEmpty(tableName) && tableName == "Customer")
+				//{
+				//	return ;
+				//}
+
+				//conn.Execute("CREATE Table Customer (" +
+				//	"ID INT IDENTITY" +
+				//	"LastName VARCHAR(100) NOT NULL)" +
+				//	"CompanyName VARCHAR(100) NOT NULL)");
 
 			}
+
+		}
+
+		private static string GetConnectionString()
+		{
+		    //conn.ConnectionString = "Data Source=DRAGO; Initial Catalog=BTBank; User id=jesse; Password=paZZ4sql;";
+
+			return "Data Source=DRAGO; Initial Catalog=BTBank; Integrated Security=true;";
+ 
+		}
+
+		public static void Setup()
+		{
 		}
 
 

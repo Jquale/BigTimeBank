@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using Microsoft.Data.Sqlite;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,8 +10,6 @@ namespace BT.Model
 {
 	public class BaseRepository<T> : IBaseRepository<T> where T : class
 	{
-		public IDbConnection Connection => new SqliteConnection();
-		string tableName = string.Empty;
 
 		public BaseRepository(string table)
 		{

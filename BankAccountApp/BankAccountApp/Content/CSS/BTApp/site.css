@@ -1,6 +1,11 @@
-﻿body {
-
+﻿html {
+	background-image: url('../../Images/BigtimeFullLogo.jpg');
+	background-color: black;
 }
+/*body {
+	background-image: url('../../Images/BigtimeFullLogo.jpg');
+	background-color: black;
+}*/
 /* BT-color-orange: #dc4c45 */
 nav {
 	display: inline-block;
@@ -34,7 +39,6 @@ p b {
 	padding: 5px 10px;
 	background-color: #DC64C6;
 	border-radius: 2px;
-	ize: 22px;
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 18px;
@@ -45,6 +49,10 @@ nav a {
 	text-align: center;
 }
 
+#main-menubar {
+	background-image: url('../../Images/BigtimeFullLogo.jpg');
+	background-color: blue;
+}
 #main-container {
 	min-height: 1px;
 	height: 333px;

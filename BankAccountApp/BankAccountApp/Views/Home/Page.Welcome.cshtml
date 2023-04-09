@@ -1,6 +1,61 @@
-﻿<div class="app-main" ng-controller="WelcomeController">
-	<h2>Welcome to DevTest Bank</h2>
-	<p>To get started, click the button below to create a new account.</p>
-	<a class="btn btn-lg btn-primary" href="#NewAccount">Create Account</a>
-</div>
+﻿@*<div class="app-main" ng-controller="WelcomeController" ng-show="tab==5">
+    <h2>Welcome to DevTest Bank</h2>
+    <p>To get started, click the button below to create a new account.</p>
+    <a class="btn btn-lg btn-primary" href="#NewAccount">Create Account</a>
+</div>*@
 
+<div ng-app="MainApp" class="app-main" ng-controller="HomeController">
+    <nav class="active">
+        <a href="#home" class="home" ng-click="tab=1">HOME</a>
+        <a href="#customer" class="customer" ng-click="tab=2">CUSTOMER</a>
+        <a href="#" class="company" ng-click="tab=3">COMPANY</a>
+        <a href="#" class="address" ng-click="tab=4">ADDRESS</a>
+    </nav>
+<div id="main-container">
+    <div id="home" ng-show="tab==1">
+        <h3>Home</h3>
+    </div>
+    <div id="customer" ng-show="tab==2">
+        <form ng-submit="submit()">
+            <h3>Customer</h3>
+            <div class="cust-group">
+                <label for="firstName"></label>
+                <input type="text"
+                       id="firstName"
+                       ng-model="name"
+                       placeholder="First Name" />
+            </div>
+
+            <div class="cust-group">
+                <div>
+                    <label for="lastName"></label>
+                </div>
+                <input type="text"
+                       id="lastName"
+                       ng-model="lname"
+                       placeholder="Last Name" />
+            </div>
+
+            <div class="cust-group">
+                <label for="companyName"></label>
+                <input type="text"
+                       id="companyName"
+                       ng-model="cname"
+                       placeholder="Company Name" />
+            </div>
+            <input type="submit" class="btn-primary" value="Submit" />
+            <pre></pre>
+        </form>
+    </div>
+    <div id="company" ng-show="tab==3">
+        <div class=comp-group>
+            <h3>Company</h3>
+        </div>
+    </div>
+    <div id="address" ng-show="tab==4">
+        <div class="address-group">
+            <h3>Address</h3>
+        </div>
+    </div>
+    </div>
+</div>

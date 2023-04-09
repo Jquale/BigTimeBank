@@ -1,32 +1,45 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
-using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BankAccountApp.Database;
-using BT.Model.Util;
+using System.Web;
 using Dapper;
-using Microsoft.Data.Sqlite;
-using SQLitePCL;
+using Microsoft.IdentityModel.Protocols;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace BT.Model.CustomerData
 {
 	public class CustomerRepository : ICustomerRepository
 	{
-		private DataContext _context;
+		private IDbConnection database;
 
-		private IDbConnection connection;
-
-
-		public CustomerRepository(string connectionString = "Data Source=bt.db")
+		//private string connString = ConfigurationManager<string>.ConnectionStrings["btbConnStr"];
+			public CustomerRepository()
 		{
-			connection = new SqliteConnection(connectionString);
-			
+
+		}
+	
+		public CustomerRepository(string cString)
+		{
+
 		}
 
+		public string AddCustomer(Customer cust)
+		{
+			var query = "INSERT INTO Customers (FirstName, LastName, Email, Company, Title) " +
+				"VALUES(John, doe, selfEmp, Pres)" +
+				"SELECT CAST(SCOPE_IDENTITY () as INT)";
+			var id = database.Query<int>(query, cust).SingleOrDefault();
+			string retVal = string.Empty;
+			cust.ID = id;
+
+			return retVal;
+		}
 		//public bool Delete<custity>(Customer cust)
+
 		//{
 		//	using (var conn = _context.CreateConnection())
 		//	{
@@ -41,21 +54,21 @@ namespace BT.Model.CustomerData
 		public List<Customer> GetCustomers(int id)
 		{
 			var query = "SELECT * FROM Customers c ORDER BY c.LastName";
-			return  connection.Query<Customer>(query).ToList();
+			return  database.Query<Customer>(query).ToList();
 
 		}
 		public Customer GetCustomerById(int id)
 		{
 
 			var query = "SELECT * FROM Customers c WHERE c.Id = id";
-			return connection.Query<Customer>(query).FirstOrDefault();
+			return database.Query<Customer>(query).FirstOrDefault();
 
 		}
 
 		public Customer SaveCustomer(Customer cust)
 		{
 			var query = $"INSERT INTO Customer (LastName, CompanyName) VALUES({cust.LastName}, {cust.CompanyName}), {cust};";
-			var thing = connection.Query<Customer>(query).FirstOrDefault();
+			var thing = database.Query<Customer>(query).FirstOrDefault();
 			return thing;
 		}
 

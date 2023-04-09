@@ -1,4 +1,5 @@
-﻿using BT.Model.CustomerData;
+﻿using BT.Model.AccountData;
+using BT.Model.CustomerData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,24 @@ namespace BankAccountApp.Controllers
 			return PartialView($"Page.AddCustomer");
 		}
 
+		public ActionResult Customer()
+		{
+			return PartialView($"Page.Customer");
+		}
+		
+		//public bool AddCustomer(string fName) 
+		//{
+		//	Customer customer = new Customer(fName);
+		//	var repo = new CustomerRepository();
+		//    return	repo.Add(customer).ID != null;
 
-		public void SaveCustomer()
+
+
+		//}
+
+
+		//public void SaveCustomer(string fName, string lName, string cName)
+		public void SaveCustomer(Dictionary<string, string> fName)
 		{
 			var repo = new CustomerRepository();
 

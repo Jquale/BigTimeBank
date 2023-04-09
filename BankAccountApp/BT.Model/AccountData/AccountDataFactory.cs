@@ -1,5 +1,4 @@
 ﻿using BT.Model.CustomerData;
-using BT.Model.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +8,11 @@ namespace BT.Model.AccountData
 {
 	public static class AccountDataFactory
 	{
-
 		public static IAccountDataRepository Create()
 		{
 			return new AccountDataRepo();
 		}
-		
+
 		public static List<Customer> GetCustomer(int? id)
 		{
 			IEnumerable<Customer> customerList;
@@ -35,5 +33,6 @@ namespace BT.Model.AccountData
 
 			return customerList.ToList();
 		}
+		public static Customer CreateCustomer(int? id) { return new Customer(); }
 	}
 }
