@@ -1,10 +1,10 @@
-﻿@*<div class="app-main" ng-controller="WelcomeController" ng-show="tab==5">
+﻿<div class="app-main" ng-controller="WelcomeController" ng-show="tab==5">
     <h2>Welcome to DevTest Bank</h2>
     <p>To get started, click the button below to create a new account.</p>
     <a class="btn btn-lg btn-primary" href="#NewAccount">Create Account</a>
-</div>*@
+</div>
 
-<div class="app-main" ng-controller="WelcomeController">
+@*<div class="app-main" ng-controller="WelcomeController">
     <nav class="active">
         <a href="#welcome"  ng-click="tab=1">HOME</a>
         <a href="#welcome"  ng-click="tab=2">CUSTOMER</a>
@@ -17,7 +17,7 @@
     </div>
     <div id="customer" ng-show="tab==2">
         <form ng-submit="submit()">
-            <h3>Customer</h3>
+            <h3>Add New Customer</h3>
             <div class="cust-group">
                 <label for="firstName"></label>
                 <input type="text"
@@ -43,9 +43,12 @@
                        ng-model="cname"
                        placeholder="Company Name" />
             </div>
-            <input type="submit" class="btn-primary" value="Submit" />
-            <pre></pre>
-        </form>
+            <input type="submit" class="btn-primary" value="Add" />
+       </form>
+        <div class="horizontal-space-16px" style="display:inline-block; width:100%; height:16px; background-color:blue;"> </div>
+     <h3>Search</h3>
+            <input type="text" name="search" value="" placeholder="start typing" /> 
+
     </div>
     <div id="company" ng-show="tab==3">
         <div class=comp-group>
@@ -58,4 +61,4 @@
         </div>
     </div>
     </div>
-</div>
+</div>*@

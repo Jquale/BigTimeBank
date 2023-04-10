@@ -2,11 +2,9 @@
 	background-image: url('../../Images/BigtimeFullLogo.jpg');
 	background-color: black;
 }
-/*body {
-	background-image: url('../../Images/BigtimeFullLogo.jpg');
-	background-color: black;
-}*/
+/* */
 /* BT-color-orange: #dc4c45 */
+/* */
 nav {
 	display: inline-block;
 	width:100%;
@@ -16,22 +14,22 @@ nav {
 	border-radius: 2px;
 }
 
-	nav a {
-		display: inline-block;
-		width: 23%;
-		padding: 18px 30px;
-		color: white !important;
-		font-weight: bold;
-		font-size: 16px;
-		text-decoration: none !important;
-		line-height: 1;
-		text-transform: uppercase;
-		background-color: transparent;
-		-webkit-transition: background-color 0.25s;
-		-moz-transition: background-color 0.25s;
-		transition: background-color 0.25s;
-		text-align: center;
-	}
+nav a {
+	display: inline-block;
+	width: 23%;
+	padding: 18px 30px;
+	color: white !important;
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration: none !important;
+	line-height: 1;
+	text-transform: uppercase;
+	background-color: transparent;
+	-webkit-transition: background-color 0.25s;
+	-moz-transition: background-color 0.25s;
+	transition: background-color 0.25s;
+	text-align: center;
+}
 
 p b {
 	color: #ffffff;
@@ -48,20 +46,46 @@ nav a {
 	width: 23%;
 	text-align: center;
 }
+.vertical-spacer-16px {
+	display:inline-block;
+	height: 16px;
+	width: 100%;
+}
+.pad8-fnt18 {
+	padding: 8px;
+	font-size: 18px;
+	background-color: #333333;
+}
+.w550px {
+	width: 40em;
+	/*width: 550px;*/
+}
+.bt-medium-width{
+	width:160px;
+}
+.bt-flt-right {
+	float: right;
+}
+.bt-container-bottom{
+	display: inline-block;
+	width: 100%;
+	border-block: solid;
+	border-width: .5px;
+}
+.required {
+	background-color: #f4cccc;
+}
 
 #main-menubar {
 	background-image: url('../../Images/BigtimeFullLogo.jpg');
 	background-color: blue;
 }
 #main-container {
+	padding-top:16px;
 	min-height: 1px;
-	height: 333px;
+	height: 777px;
 	width: 100%;
 	background-color: black;
 }
 
-#main-container div {
-	display: inline-block;
-
-}
 
