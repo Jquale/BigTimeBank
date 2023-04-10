@@ -1,4 +1,16 @@
-﻿html {
+﻿
+/*------------------------------------------------------*/
+/*           input validation coloring etc.             */
+
+input.ng-invalid {
+	background-color: #f4cccc;
+}
+
+/*        END input validation coloring etc. END        */
+/*------------------------------------------------------*/
+
+
+html {
 	background-image: url('../../Images/BigtimeFullLogo.jpg');
 	background-color: black;
 }

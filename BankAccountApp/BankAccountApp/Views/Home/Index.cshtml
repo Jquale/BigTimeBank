@@ -29,28 +29,29 @@
         <h3 class="pad8-fnt18">Home</h3>
     </div>
     <div id="customer" ng-show="tab==2">
-        <form ng-submit="submit()">
+        <form name="customerTemplateData" ng-controller="CustomerController" ng-submit="AddCustomer()">
              <h3 class="pad8-fnt18">Add New Customer</h3>
             <div class="cust-group">
                 <input type="text"
                        id="firstName"
-                       ng-model="name"
-                       placeholder="First Name" />
+                       ng-model="form.fname"
+                       placeholder="First Name" /> 
             </div>
 
             <div class="cust-group">
                 <input type="text"
                        id="lastName"
                        class="required"
-                       ng-model="lname"
-                       placeholder="Last Name" />
+                       ng-model="form.lname"
+                       placeholder="Last Name" required/><span ng-show="form.fname.$error.required">Required</span>
+
             </div>
 
             <div class="cust-group">
                 <input type="text"
                        id="companyName"
                        class="required"
-                       ng-model="cname"
+                       ng-model="form.cname"
                        placeholder="Company Name" />
             </div>
 
@@ -60,16 +61,15 @@
                 <input type="text"
                        class="w550px"
                        id="address-street"
-                       ng-model="street"
+                       ng-model="form.street"
                        placeholder="Street address" />
             </div>
 
-            <br />
             <div class="addr-group">
                 
                 <input type="text"
                        id="address-city"
-                       ng-model="city"
+                       ng-model="form.city"
                        placeholder="city" />
             </div>
 
@@ -77,39 +77,34 @@
                 
                 <input type="text"
                        id="address-state"
-                       ng-model="state"
+                       ng-model="form.state"
                        placeholder="state" />
             </div>
             <div class="addr-group">
                 
                 <input type="text"
                        id="address-zip"
-                       ng-model="zip"
+                       ng-model="form.zip"
                        placeholder="zip" />
             </div>
-            @*================================================================================================> *@
-            
-            @*================================================================================================> *@
-
             <div class="vertical-spacer-16px"> </div>
             <div class="bt-container-bottom">
-                <input type="button" class="bt-medium-width" value="Clear"/>
+                <input type="button" class="bt-medium-width clear" ng-click="clearCustomerInput()" value="Clear"/>
                 <input type="submit" class="btn-primary bt-flt-right bt-medium-width" value="Add" />
             </div>
         </form>
         <div class="vertical-spacer-16px">  </div>
      <h3 class="pad8-fnt18">Search</h3>
             <input type="text" name="search" value="" placeholder="start typing" /> 
-
     </div>
     <div id="company" ng-show="tab==3">
         <div class=comp-group>
-            <h3>Company</h3>
+            <h3 class="pad8-fnt18">Company</h3>
         </div>
     </div>
     <div id="address" ng-show="tab==4">
         <div class="address-group">
-            <h3>Address</h3>
+            <h3 class="pad8-fnt18">Address</h3>
         </div>
     </div>
     </div>
