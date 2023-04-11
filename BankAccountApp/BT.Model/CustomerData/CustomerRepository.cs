@@ -25,11 +25,11 @@ namespace BT.Model.CustomerData
 
 		public CustomerRepository(string cString)
 		{
-			connectionString = cString;
+			database = new SqlConnection(cString);
 		}
 		public List<Customer> GetCustomers(int id)
 		{
-			var query = "SELECT * FROM Customer c ORDER BY c.LastName";
+			var query = "$SELECT * FROM Customer c ORDER BY c.LastName";
 			return database.Query<Customer>(query).ToList();
 
 		}
@@ -41,31 +41,25 @@ namespace BT.Model.CustomerData
 
 		}
 
-		public Customer SaveCustomer(Customer cust)
+		public Customer SaveCustomer(Customer customer)
 		{
-			using (SqlConnection conn = new SqlConnection(connectionString))
+			try
 			{
-				conn.Open();
-				try
-				{
-					using (SqlCommand cmd = new SqlCommand($"INSERT INTO Customer " +
-						$" ([FirstName], [LastName], [CompanyName]) " +
-						$"VALUES(@FirstName, @LastName, @CompanyName);", conn))
-					{
-						cmd.Parameters.Add("FirstName", SqlDbType.VarChar).Value = cust.FirstName;
-						cmd.Parameters.Add("LastName", SqlDbType.VarChar).Value = cust.FirstName;
-						cmd.Parameters.Add("CompanyName", SqlDbType.VarChar).Value = cust.FirstName;
-						cmd.ExecuteNonQuery();
-					}
-				}
-				catch(SqlException ex)
-				{
+				var query = $"INSERT INTO Customer " +
+					$" ([FirstName], [LastName], [CompanyName]) " +
+					$"VALUES({customer.FirstName}, {customer.LastName},{customer.CompanyName};)" +
+					$"SELECT CAST(SCOPE_IDENTITY() AS INT)";
 
-				}
+				var id = database.Query<int>(query, customer).FirstOrDefault();
+				customer.ID = id;
 
-				conn.Close();
 			}
-			return new Customer();	
+			catch(SqlException ex)
+			{
+
+			}
+
+			return customer;	
 		}
 		public bool Delete<entity>(Customer ent)
 		{
