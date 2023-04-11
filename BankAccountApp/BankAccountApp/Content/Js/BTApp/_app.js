@@ -1,4 +1,5 @@
 if (typeof BT === 'undefined') { BT = {}; }
+//BASE_URL = $(window.location).origin;
 BT.App = angular.module('MainApp', ['ngResource', 'ui.bootstrap', 'ngRoute' ]);
 //loads all of the bigtime angular COMMON input filters into the app
 BT.Angular.Validators.inject(BT.App);

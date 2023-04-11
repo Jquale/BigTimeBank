@@ -10,7 +10,7 @@ namespace BankAccountApp.Database
 	{
 		//private readonly DatabaseConfig _config;
 
-		public static bool OpenConnection()
+		public SqlConnection OpenConnection()
 		{
 			string connStr = GetConnectionString(); 
 			using (var conn = new  SqlConnection(connStr))
@@ -18,16 +18,15 @@ namespace BankAccountApp.Database
 				try
 				{
 					conn.Open();
-					return true;
 				}
 				catch(SqlException ex) 
 				{
-					return false;
+					Console.WriteLine(ex.ErrorCode)	;
 
 				}
-				conn.ConnectionString = connStr;				
 
-				conn.Open();
+
+				return conn;
 
 
 				//var table = conn.Query<string>("SELECT name FROM sqllite_master WHERE type='table' AND name='Customer'");
@@ -47,7 +46,7 @@ namespace BankAccountApp.Database
 
 		}
 
-		private static string GetConnectionString()
+		private string GetConnectionString()
 		{
 		    //conn.ConnectionString = "Data Source=DRAGO; Initial Catalog=BTBank; User id=jesse; Password=paZZ4sql;";
 
@@ -65,7 +64,7 @@ namespace BankAccountApp.Database
 		public static void DeleteAll() { }
 		public static void UpdateAll() { }
 
-		public static void Getstuff()
+		public void Getstuff()
 		{
 			Setup(); //public static IEnumerable<sqlite3_value> Get(SqliteConnection conn) //{
 					 //	SqliteDataReader reader;
@@ -86,7 +85,7 @@ namespace BankAccountApp.Database
 
 		}
 
-		public static void GetCustomers()
+		public void GetCustomers()
 		{
 			throw new NotImplementedException();
 		}

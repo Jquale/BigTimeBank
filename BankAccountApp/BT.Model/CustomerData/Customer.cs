@@ -7,7 +7,7 @@ namespace BT.Model.CustomerData
 {
 	public class Customer : ICustomer
 	{
-		private CustomerDto _customer;
+		private CustomerDto _customer = new CustomerDto();
 
 		public Customer() { }
 

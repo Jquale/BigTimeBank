@@ -11,6 +11,6 @@ namespace BT.Model.CustomerData
 		public int ID { get; set; }	
 		public string LastName { get; set; }
 		public Address Address { get; set; }
-		public string CompanyName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+		public string CompanyName { get; set; }
 	}
 }

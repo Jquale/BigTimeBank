@@ -1,9 +1,12 @@
 ﻿using BT.Model.AccountData;
 using BT.Model.CustomerData;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace BankAccountApp.Controllers
@@ -30,27 +33,21 @@ namespace BankAccountApp.Controllers
 		{
 			return PartialView($"Page.Customer");
 		}
-		
-		//public bool AddCustomer(string fName) 
-		//{
-		//	Customer customer = new Customer(fName);
-		//	var repo = new CustomerRepository();
-		//    return	repo.Add(customer).ID != null;
 
-
-
-		//}
-
-
-		//public void SaveCustomer(string fName, string lName, string cName)
-		public void SaveCustomer(Dictionary<string, string> fName)
+		public bool AddCustomer(string fName, string lName, string cName)
 		{
-			var repo = new CustomerRepository();
+			Customer customer = new Customer(0, fName, lName, cName);
+			var configuation = WebConfigurationManager.OpenWebConfiguration("~");
+			var connString = System.Configuration.ConfigurationManager.ConnectionStrings["BTBankConnection"].ConnectionString;
+			var repo = new CustomerRepository(connString);
+
+
+			var cust = repo.SaveCustomer(customer);
+
+			return cust.ID != 0;
+
 
 		}
-		
 
-	
-
-}
+	}
 }

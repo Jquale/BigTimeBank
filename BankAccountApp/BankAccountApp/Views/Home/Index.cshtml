@@ -15,7 +15,7 @@
 <div ng-app="MainApp" class="main-app fixed-top">
     <div class="fixed-top-body" ng-view >
 
-</div>
+    </div>
 
 <div class="app-main" ng-controller="CustomerController">
     <nav class="active">
@@ -34,7 +34,7 @@
             <div class="cust-group">
                 <input type="text"
                        id="firstName"
-                       ng-model="form.fname"
+                       ng-model="fname"
                        placeholder="First Name" /> 
             </div>
 
@@ -42,7 +42,7 @@
                 <input type="text"
                        id="lastName"
                        class="required"
-                       ng-model="form.lname"
+                       ng-model="lname"
                        placeholder="Last Name" required/><span ng-show="form.fname.$error.required">Required</span>
 
             </div>
@@ -51,7 +51,7 @@
                 <input type="text"
                        id="companyName"
                        class="required"
-                       ng-model="form.cname"
+                       ng-model="cname"
                        placeholder="Company Name" />
             </div>
 
@@ -109,6 +109,5 @@
     </div>
     </div>
 </div>
+
 </div>
-
-

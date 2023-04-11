@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -9,69 +8,65 @@ using System.Web;
 using Dapper;
 using Microsoft.IdentityModel.Protocols;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using BankAccountApp.Database;
+using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+using Microsoft.AspNetCore.Razor.Language.Intermediate;
+using System.Data.Common;
+using System.Linq.Expressions;
 
 namespace BT.Model.CustomerData
 {
 	public class CustomerRepository : ICustomerRepository
 	{
 		private IDbConnection database;
+		private string connectionString;
 
-		//private string connString = ConfigurationManager<string>.ConnectionStrings["btbConnStr"];
-			public CustomerRepository()
-		{
-
-		}
-	
 		public CustomerRepository(string cString)
 		{
-
+			connectionString = cString;
 		}
-
-		public string AddCustomer(Customer cust)
-		{
-			var query = "INSERT INTO Customers (FirstName, LastName, Email, Company, Title) " +
-				"VALUES(John, doe, selfEmp, Pres)" +
-				"SELECT CAST(SCOPE_IDENTITY () as INT)";
-			var id = database.Query<int>(query, cust).SingleOrDefault();
-			string retVal = string.Empty;
-			cust.ID = id;
-
-			return retVal;
-		}
-		//public bool Delete<custity>(Customer cust)
-
-		//{
-		//	using (var conn = _context.CreateConnection())
-		//	{
-		//		var query = $"DELETE FROM Customers ";
-		//	}
-		//}
-
-		//public void DeleteCustomer(int id)
-		//{
-		//}
-
 		public List<Customer> GetCustomers(int id)
 		{
-			var query = "SELECT * FROM Customers c ORDER BY c.LastName";
-			return  database.Query<Customer>(query).ToList();
+			var query = "SELECT * FROM Customer c ORDER BY c.LastName";
+			return database.Query<Customer>(query).ToList();
 
 		}
 		public Customer GetCustomerById(int id)
 		{
 
-			var query = "SELECT * FROM Customers c WHERE c.Id = id";
+			var query = "SELECT * FROM Customer c WHERE c.Id = id";
 			return database.Query<Customer>(query).FirstOrDefault();
 
 		}
 
 		public Customer SaveCustomer(Customer cust)
 		{
-			var query = $"INSERT INTO Customer (LastName, CompanyName) VALUES({cust.LastName}, {cust.CompanyName}), {cust};";
-			var thing = database.Query<Customer>(query).FirstOrDefault();
-			return thing;
-		}
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
+				try
+				{
+					using (SqlCommand cmd = new SqlCommand($"INSERT INTO Customer " +
+						$" ([FirstName], [LastName], [CompanyName]) " +
+						$"VALUES(@FirstName, @LastName, @CompanyName);", conn))
+					{
+						cmd.Parameters.Add("FirstName", SqlDbType.VarChar).Value = cust.FirstName;
+						cmd.Parameters.Add("LastName", SqlDbType.VarChar).Value = cust.FirstName;
+						cmd.Parameters.Add("CompanyName", SqlDbType.VarChar).Value = cust.FirstName;
+						cmd.ExecuteNonQuery();
+					}
+				}
+				catch(SqlException ex)
+				{
 
+				}
+
+				conn.Close();
+			}
+			return new Customer();	
+		}
 		public bool Delete<entity>(Customer ent)
 		{
 			throw new NotImplementedException();
@@ -89,7 +84,7 @@ namespace BT.Model.CustomerData
 
 		public List<Customer> GetAll()
 		{
-			throw new NotImplementedException();
+			return	database.Query<Customer>("SELECT * FROM Contacts").ToList();
 		}
 
 		public Customer Add(Customer customer)
@@ -102,7 +97,7 @@ namespace BT.Model.CustomerData
 			throw new NotImplementedException();
 		}
 
-		public Customer Delete(int id)
+		public void Delete(int id)
 		{
 			throw new NotImplementedException();
 		}

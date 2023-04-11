@@ -11,7 +11,6 @@ namespace BT.Model.CustomerData
 		List<Customer> GetAll();
 		Customer Add(Customer customer);
 		Customer Update(Customer customer);
-		Customer Delete(int id);
-
+		void Delete(int id);
 	}
 }
