@@ -42,7 +42,7 @@ namespace BT.Model.CustomerData
 		public int ID
 		{
 			get { return _customer.ID; }
-			set { ID = value; }
+			set { _customer.ID = value; }
 		}
 		public string LastName
 		{

@@ -21,7 +21,6 @@ namespace BT.Model.CustomerData
 	public class CustomerRepository : ICustomerRepository
 	{
 		private IDbConnection database;
-		private string connectionString;
 
 		public CustomerRepository(string cString)
 		{
@@ -41,13 +40,14 @@ namespace BT.Model.CustomerData
 
 		}
 
+
 		public Customer SaveCustomer(Customer customer)
 		{
 			try
 			{
-				var query = $"INSERT INTO Customer " +
+				var query = $"INSERT INTO BTBank.dbo.Customer " +
 					$" ([FirstName], [LastName], [CompanyName]) " +
-					$"VALUES({customer.FirstName}, {customer.LastName},{customer.CompanyName};)" +
+					$"VALUES('{customer.FirstName}', '{customer.LastName}','{customer.CompanyName}')" +
 					$"SELECT CAST(SCOPE_IDENTITY() AS INT)";
 
 				var id = database.Query<int>(query, customer).FirstOrDefault();

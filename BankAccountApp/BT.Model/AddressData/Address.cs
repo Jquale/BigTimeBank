@@ -9,25 +9,37 @@ namespace BT.Model.AddressData
 	{
 		private AddressDto _record;
 
-		public Address() { }
+		public Address() 
+		{
+			_record = new AddressDto();
+		}
 
 		Address(AddressDto record = null) {
 			if (record == null) { record = new AddressDto(); }
 			_record = record;
 		}
 
-		Address(string street, string city, string state, int zip)
+		public Address(string street, string city, string state, int zip)
 		{
+			_record = new AddressDto();
 			_record.Street = street;
 			_record.City = city;
 			_record.State = state;
 			_record.Zip = zip;
 		}
 
+		public int AddressID
+		{
+			get { return _record.AddressID; }
+			set { _record.AddressID = value; }
+		}
+		
 		public string Street
+			
 		{
 			get { return _record.Street; }
 			set { _record.Street = value; }
+			
 		}
 
 		public string City

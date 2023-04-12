@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     //   ViewBag.Title = "Index";
     //   Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
@@ -61,7 +60,7 @@
                 <input type="text"
                        class="w550px"
                        id="address-street"
-                       ng-model="form.street"
+                       ng-model="street"
                        placeholder="Street address" />
             </div>
 
@@ -69,7 +68,7 @@
                 
                 <input type="text"
                        id="address-city"
-                       ng-model="form.city"
+                       ng-model="city"
                        placeholder="city" />
             </div>
 
@@ -77,14 +76,14 @@
                 
                 <input type="text"
                        id="address-state"
-                       ng-model="form.state"
+                       ng-model="state"
                        placeholder="state" />
             </div>
             <div class="addr-group">
                 
                 <input type="text"
                        id="address-zip"
-                       ng-model="form.zip"
+                       ng-model="zip"
                        placeholder="zip" />
             </div>
             <div class="vertical-spacer-16px"> </div>
@@ -93,7 +92,7 @@
                 <input type="submit" class="btn-primary bt-flt-right bt-medium-width" value="Add" />
             </div>
         </form>
-        <div class="vertical-spacer-16px">  </div>
+        <div class="vertical-spacer-16px"> 
      <h3 class="pad8-fnt18">Search</h3>
             <input type="text" name="search" value="" placeholder="start typing" /> 
     </div>

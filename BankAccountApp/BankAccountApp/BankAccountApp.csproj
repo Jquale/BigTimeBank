@@ -595,7 +595,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Scripts\angular.min.js.map" />
   </ItemGroup>
