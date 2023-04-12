@@ -1,6 +1,6 @@
-﻿ <div class="app-main" ng-controller="WelcomeController">
+﻿ <div class="app-main" ng-controller="CustomerController">
 
-        <input type="button" ng-click="customer-lookup" class="bt-medium-width" name="getit" value="Get Cust List" style="float:right">
+        <input type="button" ng-click="LoadCustList()" class="bt-medium-width" name="getit" value="Get Cust List" style="float:right">
 
         <table>
             <tr ng-repeat="user in users track by user.id">
@@ -9,14 +9,12 @@
                 <tr><th>ID</th><th>Name</th><th>Company</th></tr>
             </thead>
             <tbody>
-                <tr ng-repeat="row in result">
+                <tr ng-repeat="row in custList">
                     <td>{{row.ID}}</td>
                     <td>{{row.Name}}</td>
-                    <td>{{row.Company}}</td>
+                    <td>{{row.cname}}</td>
                 </tr>
             </tbody>
         </table>
-
-
     </div>
 

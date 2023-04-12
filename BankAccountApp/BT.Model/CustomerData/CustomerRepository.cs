@@ -28,7 +28,7 @@ namespace BT.Model.CustomerData
 		}
 		public List<Customer> GetList()
 		{
-			var query = "$SELECT * FROM Customer c ORDER BY c.LastName";
+			var query = "SELECT * FROM Customer c ORDER BY c.LastName";
 			return database.Query<Customer>(query).ToList();
 
 		}

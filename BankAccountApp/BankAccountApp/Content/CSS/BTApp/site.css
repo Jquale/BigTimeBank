@@ -103,13 +103,17 @@ nav a {
 /*------------------------------------------------------*/
 table {
 	margin:auto;
+	text-decoration-color: white;
 }
-table th {
-	align-content: center;
-
-	width: 30%;
-}
+	table th {
+		align-content: center;
+		width: 100px;
+		height: 16px;
+		text-decoration-color: white;
+	}
 table, th, td {
+	height: 26px;
+	text-decoration-color: white;
 	border: 1px solid white;
 	padding: 5px;
 }

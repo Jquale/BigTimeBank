@@ -1,6 +1,6 @@
 ﻿if (typeof BT === 'undefined') { BT = {}; }
 BT.App.controller('CustomerController', function ($scope, $http) {
-    $scope.clearCustomerInput = function () {
+    $scope.ClearCustomerInput = function () {
         $scope.form = null;
         $(".cust-group input").val("");
         $(".addr-group input").val("");
@@ -34,9 +34,13 @@ BT.App.controller('CustomerController', function ($scope, $http) {
 
         }).then(function (ret) { });
     };      
-    $scope.LoadCustList = function () {
-        $http.Get("Page.CustomerList").then(function (page) {
-            $("#partial-load").HTML(page);
-        })
+
+    $scope.LoadCustList=function(){
+        $http({
+            method: 'POST',
+            url: 'Home/CustomerList',
+        }).then(function (customers) {
+            $scope.custList = customers;
+        });
     }
 });
