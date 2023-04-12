@@ -100,4 +100,16 @@ nav a {
 	background-color: black;
 }
 
+/*------------------------------------------------------*/
+table {
+	margin:auto;
+}
+table th {
+	align-content: center;
 
+	width: 30%;
+}
+table, th, td {
+	border: 1px solid white;
+	padding: 5px;
+}

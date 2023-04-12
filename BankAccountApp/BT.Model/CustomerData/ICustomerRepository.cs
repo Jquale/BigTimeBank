@@ -7,8 +7,9 @@ namespace BT.Model.CustomerData
 {
 	public interface ICustomerRepository// : IBaseRepository<Customer>
 	{
-		Customer Get(int id);
-		List<Customer> GetAll();
+		Customer GetCustomerById(int id);
+		List<Customer> GetList();
+		Customer GetNewCustomer();
 		Customer Add(Customer customer);
 		Customer Update(Customer customer);
 		void Delete(int id);

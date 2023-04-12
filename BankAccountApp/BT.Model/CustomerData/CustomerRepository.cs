@@ -26,7 +26,7 @@ namespace BT.Model.CustomerData
 		{
 			database = new SqlConnection(cString);
 		}
-		public List<Customer> GetCustomers(int id)
+		public List<Customer> GetList()
 		{
 			var query = "$SELECT * FROM Customer c ORDER BY c.LastName";
 			return database.Query<Customer>(query).ToList();
@@ -39,7 +39,10 @@ namespace BT.Model.CustomerData
 			return database.Query<Customer>(query).FirstOrDefault();
 
 		}
-
+		public Customer GetNewCustomer()
+		{
+			return new Customer();
+		}
 
 		public Customer SaveCustomer(Customer customer)
 		{
@@ -66,20 +69,6 @@ namespace BT.Model.CustomerData
 			throw new NotImplementedException();
 		}
 
-		public bool Save<entity>(Customer ent)
-		{
-			throw new NotImplementedException();
-		}
-
-		public Customer Get(int id)
-		{
-			throw new NotImplementedException();
-		}
-
-		public List<Customer> GetAll()
-		{
-			return	database.Query<Customer>("SELECT * FROM Contacts").ToList();
-		}
 
 		public Customer Add(Customer customer)
 		{

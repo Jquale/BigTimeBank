@@ -22,7 +22,7 @@ namespace BT.Model.AccountData
 				case null:
 					return new List<Customer>() { new Customer() };
 				case -1:
-					customerList = (IEnumerable<Customer>)new CustomerRepository(null).GetCustomers((int)id);
+					customerList = (IEnumerable<Customer>)new CustomerRepository(null).GetList();
 					
 					break;
 				default:

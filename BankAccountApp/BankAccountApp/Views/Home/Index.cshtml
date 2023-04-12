@@ -7,7 +7,6 @@
     <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/_routes.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/WelcomeController.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/TestController.js")"></script>
-
     <script type="text/javascript" src="@Url.Content("~/Content/Js/BTApp/CustomerController.js")"></script>
 }
 
@@ -19,7 +18,7 @@
 <div class="app-main" ng-controller="CustomerController">
     <nav class="active">
         <a href="#welcome"  ng-click="tab=1">HOME</a>
-        <a href="#welcome"  ng-click="tab=2">CUSTOMER</a>
+        <a href="#customer"  ng-click="tab=2">CUSTOMER</a>
         <a href="#welcome"  ng-click="tab=3">COMPANY</a>
         <a href="#welcome"  ng-click="tab=4">ADDRESS</a>
     </nav>
@@ -29,12 +28,12 @@
     </div>
     <div id="customer" ng-show="tab==2">
         <form name="customerTemplateData" ng-controller="CustomerController" ng-submit="AddCustomer()">
-             <h3 class="pad8-fnt18">Add New Customer</h3>
+            <h3 class="pad8-fnt18">Add New Customer</h3>
             <div class="cust-group">
                 <input type="text"
                        id="firstName"
                        ng-model="fname"
-                       placeholder="First Name" /> 
+                       placeholder="First Name" />
             </div>
 
             <div class="cust-group">
@@ -42,7 +41,7 @@
                        id="lastName"
                        class="required"
                        ng-model="lname"
-                       placeholder="Last Name" required/><span ng-show="form.fname.$error.required">Required</span>
+                       placeholder="Last Name" required /><span ng-show="form.fname.$error.required">Required</span>
 
             </div>
 
@@ -54,7 +53,7 @@
                        placeholder="Company Name" />
             </div>
 
-        <div class="vertical-spacer-16px"> </div>
+            <div class="vertical-spacer-16px"> </div>
 
             <div class="addr-group">
                 <input type="text"
@@ -65,7 +64,7 @@
             </div>
 
             <div class="addr-group">
-                
+
                 <input type="text"
                        id="address-city"
                        ng-model="city"
@@ -73,31 +72,22 @@
             </div>
 
             <div class="addr-group">
-                
+
                 <input type="text"
                        id="address-state"
                        ng-model="state"
                        placeholder="state" />
             </div>
-            <div class="addr-group">
-                
-                <input type="text"
-                       id="address-zip"
-                       ng-model="zip"
-                       placeholder="zip" />
-            </div>
             <div class="vertical-spacer-16px"> </div>
             <div class="bt-container-bottom">
-                <input type="button" class="bt-medium-width clear" ng-click="clearCustomerInput()" value="Clear"/>
+                <input type="button" class="bt-medium-width clear" ng-click="clearCustomerInput()" value="Clear" />
                 <input type="submit" class="btn-primary bt-flt-right bt-medium-width" value="Add" />
             </div>
+            <h3 class="pad8-fnt18">Customer List</h3>
         </form>
-        <div class="vertical-spacer-16px"> 
-     <h3 class="pad8-fnt18">Search</h3>
-            <input type="text" name="search" value="" placeholder="start typing" /> 
-    </div>
-    <div id="company" ng-show="tab==3">
-        <div class=comp-group>
+</div><!-- END Tab Customer -->
+    <div class=comp-group>
+        <div id="company" ng-show="tab==3">
             <h3 class="pad8-fnt18">Company</h3>
         </div>
     </div>
@@ -108,5 +98,4 @@
     </div>
     </div>
 </div>
-
 </div>

@@ -4,6 +4,8 @@ using System.Web.Configuration;
 using System.Web.Mvc;
 using BankAccountApp.Models;
 using BT.Model.AddressData;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BankAccountApp.Controllers
 {
@@ -27,7 +29,7 @@ namespace BankAccountApp.Controllers
 
 		public ActionResult Customer()
 		{
-			return PartialView($"Page.Customer");
+			return PartialView($"Page.CustomerList");
 		}
 
 		public bool AddCustomer(CustomerViewModel cvm)
@@ -44,9 +46,13 @@ namespace BankAccountApp.Controllers
 			var cust = custRepo.SaveCustomer(customer);
 
 			return cust.ID != 0;
-
-
 		}
-
+		
+		public List<Customer> CustomerList()
+		{
+			var connString = System.Configuration.ConfigurationManager.ConnectionStrings["BTBankConnection"].ConnectionString;
+			var custRepo = new CustomerRepository(connString);
+			return custRepo.GetList();	
+		}
 	}
 }

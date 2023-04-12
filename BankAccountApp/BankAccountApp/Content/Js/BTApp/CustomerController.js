@@ -1,13 +1,19 @@
-﻿console.log("Hit Customer Controller");
-if (typeof BT === 'undefined') { BT = {}; }
+﻿if (typeof BT === 'undefined') { BT = {}; }
 BT.App.controller('CustomerController', function ($scope, $http) {
     $scope.clearCustomerInput = function () {
         $scope.form = null;
         $(".cust-group input").val("");
         $(".addr-group input").val("");
-        console.log("clear input");
     };
-    
+
+    $scope.CustomerLookup = function (term) {
+        $http({
+            method: "GET",
+            url: 'Home/LookupCustomer',
+            data: {term}
+        }).then(function () {alert("dunzoi"); }); 
+    };
+
     $scope.AddCustomer= function () {
         var _data = {
             FirstName:$scope.fname,
@@ -26,7 +32,11 @@ BT.App.controller('CustomerController', function ($scope, $http) {
             'Content-type': 'application/json'
         }
 
-        }).then(function (ret) { alert("  ... FInaly ..."); });
-        console.log("cust add ... " + $scope.fname);
+        }).then(function (ret) { });
     };      
+    $scope.LoadCustList = function () {
+        $http.Get("Page.CustomerList").then(function (page) {
+            $("#partial-load").HTML(page);
+        })
+    }
 });

@@ -1,0 +1,22 @@
+﻿ <div class="app-main" ng-controller="WelcomeController">
+
+        <input type="button" ng-click="customer-lookup" class="bt-medium-width" name="getit" value="Get Cust List" style="float:right">
+
+        <table>
+            <tr ng-repeat="user in users track by user.id">
+            </tr>
+            <thead>
+                <tr><th>ID</th><th>Name</th><th>Company</th></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in result">
+                    <td>{{row.ID}}</td>
+                    <td>{{row.Name}}</td>
+                    <td>{{row.Company}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
